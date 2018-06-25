@@ -5,7 +5,7 @@
 <img height="80" width="80" alt="palette" src="https://user-images.githubusercontent.com/26611339/41866354-dfb50a8a-787d-11e8-8177-b660bd67ea31.png" />
 </a>
 
-<p> A MEAN Bookstore app with RESTful API. </p>
+<p> A MEAN Bookstore app with a RESTful API. </p>
 </div>
 
 <hr />
