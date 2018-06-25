@@ -30,7 +30,21 @@ app.get('/api/genres', function(req, res) {
 // Add a new Genre
 app.post('/api/genres', function(req, res) {
   var genre = req.body;
+
   Genre.addGenre(genre, function(err, genre) {
+    if (err) {
+      throw err;
+    }
+    res.json(genre);
+  });
+});
+
+// Update Genre
+app.put('/api/genres/:_id', function(req, res) {
+  var id = req.params._id;
+  var genre = req.body;
+
+  Genre.updateGenre(id, genre, {}, function(err, genre) {
     if (err) {
       throw err;
     }
@@ -62,6 +76,19 @@ app.get('/api/books/:_id', function(req, res) {
 app.post('/api/books', function(req, res) {
   var book = req.body;
   Book.addBook(book, function(err, book) {
+    if (err) {
+      throw err;
+    }
+    res.json(book);
+  });
+});
+
+// Update Book
+app.put('/api/books/:_id', function(req, res) {
+  var id = req.params._id;
+  var book = req.body;
+
+  Book.updateBook(id, book, {}, function(err, book) {
     if (err) {
       throw err;
     }
