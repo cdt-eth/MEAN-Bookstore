@@ -8,8 +8,10 @@ mongoose.connect('mongodb://localhost/bookstore');
 var db = mongoose.connection;
 
 app.get('/', function(req, res) {
-  res.send('Hello World');
+  res.send('Please use /api/books or /api/genres');
 });
+
+app.get('/api/genres', function(req, res) {});
 
 app.listen(3000);
 console.log('Running on Port 3-Stacks...');
