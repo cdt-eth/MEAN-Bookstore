@@ -13,5 +13,13 @@ myApp.controller('BooksController', [
         $scope.books = response;
       });
     };
+
+    $scope.getBook = function() {
+      var id = $routeParams.id;
+
+      $http.get('/api/books/' + id).success(function(response) {
+        $scope.book = response;
+      });
+    };
   }
 ]);
