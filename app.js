@@ -39,6 +39,18 @@ app.post('/api/genres', function(req, res) {
   });
 });
 
+// Delete Genre
+app.delete('/api/genres/:_id', function(req, res) {
+  var id = req.params._id;
+
+  Genre.deleteGenre(id, function(err, genre) {
+    if (err) {
+      throw err;
+    }
+    res.json(genre);
+  });
+});
+
 // Update Genre
 app.put('/api/genres/:_id', function(req, res) {
   var id = req.params._id;
@@ -76,6 +88,18 @@ app.get('/api/books/:_id', function(req, res) {
 app.post('/api/books', function(req, res) {
   var book = req.body;
   Book.addBook(book, function(err, book) {
+    if (err) {
+      throw err;
+    }
+    res.json(book);
+  });
+});
+
+// Delete Book
+app.delete('/api/books/:_id', function(req, res) {
+  var id = req.params._id;
+
+  Book.deleteBook(id, function(err, book) {
     if (err) {
       throw err;
     }
