@@ -23,9 +23,15 @@ myApp.controller('BooksController', [
     };
 
     $scope.addBook = function() {
+      $http.post('/api/books/', $scope.book).success(function(response) {
+        window.location.href = '#/books';
+      });
+    };
+
+    $scope.updateBook = function() {
       var id = $routeParams.id;
 
-      $http.post('/api/books/', $scope.book).success(function(response) {
+      $http.put('/api/books/' + id, $scope.book).success(function(response) {
         window.location.href = '#/books';
       });
     };
