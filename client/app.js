@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.config(function(routeProvider) {
+myApp.config(function($routeProvider) {
   $routeProvider
     .when('/', {
       controller: 'BooksController',
@@ -12,7 +12,7 @@ myApp.config(function(routeProvider) {
     })
     .when('/books/details/:id', {
       controller: 'BooksController',
-      templateUrl: 'views/books_details.html'
+      templateUrl: 'views/book_details.html'
     })
     .when('/books/add', {
       controller: 'BooksController',
