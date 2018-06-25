@@ -1,3 +1,5 @@
+<a href="#/books"> Go Back </a>
+
 <div class="panel panel-default" ng-init="getBook()">
     <div class="panel-heading">
         <h3 class="panel-title">{{book.name}}</h3>
@@ -14,5 +16,6 @@
                     <li class="list-group-item"> Author: {{book.author}}</li>
                     <li class="list-group-item"> Pages: {{book.pages}}</li>
                 </ul>
+                <a href="{{book.buy_url}}" class="btn btn-primary" target="_blank"> Buy on Amazon </a>
             </div>
         </div>

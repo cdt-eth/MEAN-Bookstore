@@ -21,5 +21,13 @@ myApp.controller('BooksController', [
         $scope.book = response;
       });
     };
+
+    $scope.addBook = function() {
+      var id = $routeParams.id;
+
+      $http.post('/api/books/', $scope.book).success(function(response) {
+        window.location.href = '#/books';
+      });
+    };
   }
 ]);
