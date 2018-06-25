@@ -35,5 +35,11 @@ myApp.controller('BooksController', [
         window.location.href = '#/books';
       });
     };
+
+    $scope.removeBook = function(id) {
+      $http.delete('/api/books/' + id).success(function(response) {
+        window.location.href = '#/books';
+      });
+    };
   }
 ]);
