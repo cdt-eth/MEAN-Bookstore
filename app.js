@@ -13,6 +13,7 @@ Book = require('./models/book');
 mongoose.connect('mongodb://localhost/bookstore');
 var db = mongoose.connection;
 
+app.use(express.static(__dirname + '/client'));
 app.get('/', function(req, res) {
   res.send('Please use /api/books or /api/genres');
 });
