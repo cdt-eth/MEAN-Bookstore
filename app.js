@@ -27,7 +27,7 @@ app.get('/api/genres', function(req, res) {
   });
 });
 
-// Add Genre
+// Add a new Genre
 app.post('/api/genres', function(req, res) {
   var genre = req.body;
   Genre.addGenre(genre, function(err, genre) {
@@ -51,6 +51,17 @@ app.get('/api/books', function(req, res) {
 // Show Book By Id
 app.get('/api/books/:_id', function(req, res) {
   Book.getBookById(req.params._id, function(err, book) {
+    if (err) {
+      throw err;
+    }
+    res.json(book);
+  });
+});
+
+// Add a new Book
+app.post('/api/books', function(req, res) {
+  var book = req.body;
+  Book.addBook(book, function(err, book) {
     if (err) {
       throw err;
     }
